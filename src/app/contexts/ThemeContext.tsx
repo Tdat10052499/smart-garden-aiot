@@ -1,11 +1,10 @@
 import React, { createContext, useContext, useState, useEffect, ReactNode } from 'react';
 
-type Theme = 'light' | 'dark' | 'system';
+type Theme = 'nature-light' | 'midnight-forest' | 'strawberry-sunset';
 
 interface ThemeContextType {
   theme: Theme;
   setTheme: (theme: Theme) => void;
-  isDark: boolean;
 }
 
 const ThemeContext = createContext<ThemeContextType | undefined>(undefined);
@@ -23,31 +22,24 @@ interface ThemeProviderProps {
 }
 
 export function ThemeProvider({ children }: ThemeProviderProps) {
-  const [theme, setTheme] = useState<Theme>('system');
+  const [theme, setTheme] = useState<Theme>('nature-light');
 
   useEffect(() => {
-    const savedTheme = localStorage.getItem('theme') as Theme || 'system';
+    const savedTheme = localStorage.getItem('theme') as Theme || 'nature-light';
     setTheme(savedTheme);
   }, []);
 
-  const isDark = theme === 'dark' || (theme === 'system' && window.matchMedia('(prefers-color-scheme: dark)').matches);
-
   useEffect(() => {
     localStorage.setItem('theme', theme);
-
-    if (isDark) {
-      document.documentElement.classList.add('dark');
-    } else {
-      document.documentElement.classList.remove('dark');
-    }
-  }, [theme, isDark]);
+    document.documentElement.setAttribute('data-theme', theme);
+  }, [theme]);
 
   const handleSetTheme = (newTheme: Theme) => {
     setTheme(newTheme);
   };
 
   return (
-    <ThemeContext.Provider value={{ theme, setTheme: handleSetTheme, isDark }}>
+    <ThemeContext.Provider value={{ theme, setTheme: handleSetTheme }}>
       {children}
     </ThemeContext.Provider>
   );

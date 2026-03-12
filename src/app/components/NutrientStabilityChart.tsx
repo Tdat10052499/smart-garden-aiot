@@ -13,10 +13,10 @@ export function NutrientStabilityChart() {
   ];
 
   return (
-    <div className="bg-white/80 backdrop-blur-md rounded-[12px] p-6 shadow-sm border border-white/20 dark:bg-slate-800/60 dark:backdrop-blur-md dark:border-slate-700/50 dark:shadow-slate-900/20">
+    <div className="bg-card border-border rounded-[12px] p-6 shadow-sm">
       <div className="mb-6">
-        <h2 className="text-[#2D5A27] dark:text-slate-50 mb-2">Nutrient Stability - 24 Hour Trend</h2>
-        <p className="text-sm text-gray-600 dark:text-slate-400">TDS levels tracked over the last day</p>
+        <h2 className="text-primary mb-2">Nutrient Stability - 24 Hour Trend</h2>
+        <p className="text-sm text-muted-foreground">TDS levels tracked over the last day</p>
       </div>
 
       <div className="h-80">
@@ -24,25 +24,25 @@ export function NutrientStabilityChart() {
           <AreaChart data={data}>
             <defs>
               <linearGradient id="colorTds" x1="0" y1="0" x2="0" y2="1">
-                <stop offset="5%" stopColor="#72BF44" stopOpacity={0.3}/>
-                <stop offset="95%" stopColor="#72BF44" stopOpacity={0}/>
+                <stop offset="5%" stopColor="hsl(var(--accent))" stopOpacity={0.3}/>
+                <stop offset="95%" stopColor="hsl(var(--accent))" stopOpacity={0}/>
               </linearGradient>
             </defs>
-            <CartesianGrid strokeDasharray="3 3" stroke="#e5e7eb" />
+            <CartesianGrid strokeDasharray="3 3" stroke="hsl(var(--border))" />
             <XAxis
               dataKey="time"
-              stroke="#6b7280"
+              stroke="hsl(var(--text-secondary))"
               style={{ fontSize: "12px" }}
             />
             <YAxis
-              stroke="#6b7280"
+              stroke="hsl(var(--text-secondary))"
               style={{ fontSize: "12px" }}
               label={{ value: "TDS (ppm)", angle: -90, position: "insideLeft" }}
             />
             <Tooltip
               contentStyle={{
-                backgroundColor: "white",
-                border: "1px solid #e5e7eb",
+                backgroundColor: "hsl(var(--card))",
+                border: "1px solid hsl(var(--border))",
                 borderRadius: "12px",
                 padding: "12px"
               }}
@@ -51,7 +51,7 @@ export function NutrientStabilityChart() {
               key="area-tds"
               type="monotone"
               dataKey="tds"
-              stroke="#72BF44"
+              stroke="hsl(var(--accent-secondary))"
               strokeWidth={2}
               fillOpacity={1}
               fill="url(#colorTds)"
@@ -61,8 +61,8 @@ export function NutrientStabilityChart() {
         </ResponsiveContainer>
       </div>
 
-      <div className="mt-4 p-4 bg-blue-50 dark:bg-slate-800 rounded-[12px] border border-blue-200 dark:border-slate-700">
-        <p className="text-sm text-blue-900 dark:text-slate-300">
+      <div className="mt-4 p-4 bg-muted rounded-[12px] border border-muted">
+        <p className="text-sm text-muted-foreground">
           <strong>Stability Analysis:</strong> TDS levels are gradually increasing within optimal range.
           Current trend suggests stable nutrient uptake. Consider checking in 6-8 hours.
         </p>

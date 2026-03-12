@@ -81,22 +81,22 @@ export function AILabPage() {
   return (
     <div className="flex h-full">
       {/* Sidebar Filter */}
-      <aside className="w-64 bg-white/80 backdrop-blur-md border-r border-gray-200 p-6 dark:bg-slate-950 dark:backdrop-blur-md dark:border-slate-800">
-        <h3 className="text-[#2D5A27] dark:text-slate-50 mb-6 flex items-center gap-2">
+      <aside className="w-64 bg-card border-r-border p-6">
+        <h3 className="text-primary mb-6 flex items-center gap-2">
           <Filter size={20} />
           Filters
         </h3>
 
         {/* Date Filter */}
         <div className="mb-6">
-          <label className="text-sm text-gray-600 dark:text-slate-400 mb-2 flex items-center gap-2">
+          <label className="text-sm text-muted-foreground mb-2 flex items-center gap-2">
             <Calendar size={16} />
             Date
           </label>
           <select
             value={selectedDate}
             onChange={(e) => setSelectedDate(e.target.value)}
-            className="w-full p-2 border border-gray-300 dark:border-slate-700 rounded-[12px] bg-white dark:bg-slate-900 text-sm"
+            className="w-full p-2 border border-border rounded-[12px] bg-background text-sm"
           >
             <option value="all">All Dates</option>
             <option value="2026-03-12">Today (Mar 12)</option>
@@ -107,13 +107,13 @@ export function AILabPage() {
 
         {/* Disease Type Filter */}
         <div className="mb-6">
-          <label className="text-sm text-gray-600 dark:text-slate-400 mb-2 block">
+          <label className="text-sm text-muted-foreground mb-2 block">
             Disease Type
           </label>
           <select
             value={selectedDisease}
             onChange={(e) => setSelectedDisease(e.target.value)}
-            className="w-full p-2 border border-gray-300 dark:border-slate-700 rounded-[12px] bg-white dark:bg-slate-900 text-sm"
+            className="w-full p-2 border border-border rounded-[12px] bg-background text-sm"
           >
             <option value="all">All Types</option>
             <option value="none">Healthy</option>
@@ -123,10 +123,10 @@ export function AILabPage() {
           </select>
         </div>
 
-        <div className="pt-6 border-t border-gray-200">
-          <div className="text-sm text-gray-600 dark:text-slate-400">
-            <p className="mb-2">Total Scans: <span className="text-[#2D5A27] dark:text-slate-50">{diagnostics.length}</span></p>
-            <p>Showing: <span className="text-[#2D5A27] dark:text-slate-50">{filteredDiagnostics.length}</span></p>
+        <div className="pt-6 border-t border-border">
+          <div className="text-sm text-muted-foreground">
+            <p className="mb-2">Total Scans: <span className="text-primary">{diagnostics.length}</span></p>
+            <p>Showing: <span className="text-primary">{filteredDiagnostics.length}</span></p>
           </div>
         </div>
       </aside>
@@ -134,10 +134,11 @@ export function AILabPage() {
       {/* Main Content */}
       <div className="flex-1 p-8 overflow-auto">
         <div className="mb-8">
-          <h1 className="text-[#2D5A27] dark:text-slate-50 mb-2">AI Lab</h1>
-          <p className="text-gray-600 dark:text-slate-400">Diagnostic history and analysis results</p>
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6 w-full">
-            {filteredDiagnostics.map((diagnostic) => (
+          <h1 className="text-primary mb-2">AI Lab</h1>
+          <p className="text-muted-foreground">Diagnostic history and analysis results</p>
+        </div>
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
+          {filteredDiagnostics.map((diagnostic) => (
             <DiagnosticCard
               key={diagnostic.id}
               imageUrl={diagnostic.imageUrl}
@@ -149,11 +150,10 @@ export function AILabPage() {
             />
           ))}
         </div>
-      </div>
 
         {filteredDiagnostics.length === 0 && (
           <div className="text-center py-12">
-            <p className="text-gray-500">No results found. Try adjusting your filters.</p>
+            <p className="text-muted-foreground">No results found. Try adjusting your filters.</p>
           </div>
         )}
       </div>

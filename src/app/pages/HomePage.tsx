@@ -40,7 +40,7 @@ export function HomePage() {
     <div className="max-w-7xl mx-auto p-8">
       {/* Header */}
       <div className="mb-8">
-        <h1 className="text-[#2D5A27] mb-2">Hydroponic Dashboard</h1>
+        <h1 className="text-primary mb-2">Hydroponic Dashboard</h1>
         <p className="text-gray-600">Real-time monitoring and AI-powered plant health analysis</p>
       </div>
 

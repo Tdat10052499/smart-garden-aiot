@@ -15,18 +15,18 @@ export function AIVisionHub({ confidence, sensorData }: AIVisionHubProps) {
   const offset = circumference - (confidence / 100) * circumference;
 
   return (
-    <div className="bg-white rounded-[12px] p-6 shadow-sm border border-gray-100">
-      <h3 className="text-[#2D5A27] mb-4">Latest Leaf Scan</h3>
+    <div className="bg-card rounded-[12px] p-6 shadow-sm border border-border">
+      <h3 className="text-primary mb-4">Latest Leaf Scan</h3>
 
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
         {/* Leaf Image */}
-        <div className="relative aspect-[4/3] bg-gray-100 rounded-[12px] overflow-hidden">
+        <div className="relative aspect-[4/3] bg-muted rounded-[12px] overflow-hidden">
           <ImageWithFallback
             src="https://images.unsplash.com/photo-1464226184884-fa280b87c399?w=600&h=450&fit=crop"
             alt="Strawberry leaf scan"
             className="w-full h-full object-cover"
           />
-          <div className="absolute top-3 right-3 bg-[#72BF44] text-white px-3 py-1 rounded-full text-sm">
+          <div className="absolute top-3 right-3 bg-accent text-accent-foreground px-3 py-1 rounded-full text-sm">
             Healthy
           </div>
         </div>
@@ -41,7 +41,7 @@ export function AIVisionHub({ confidence, sensorData }: AIVisionHubProps) {
                   cx="56"
                   cy="56"
                   r="45"
-                  stroke="#E5E7EB"
+                  stroke="border"
                   strokeWidth="8"
                   fill="none"
                 />
@@ -49,7 +49,7 @@ export function AIVisionHub({ confidence, sensorData }: AIVisionHubProps) {
                   cx="56"
                   cy="56"
                   r="45"
-                  stroke="#72BF44"
+                  stroke="accent"
                   strokeWidth="8"
                   fill="none"
                   strokeDasharray={circumference}
@@ -58,35 +58,35 @@ export function AIVisionHub({ confidence, sensorData }: AIVisionHubProps) {
                 />
               </svg>
               <div className="absolute inset-0 flex items-center justify-center">
-                <span className="text-2xl text-[#2D5A27]">{confidence}%</span>
+                <span className="text-2xl text-primary">{confidence}%</span>
               </div>
             </div>
 
             <div>
-              <div className="text-gray-600 text-sm mb-1">AI Confidence</div>
-              <div className="text-[#2D5A27]">High Accuracy</div>
+              <div className="text-muted-foreground text-sm mb-1">AI Confidence</div>
+              <div className="text-primary">High Accuracy</div>
             </div>
           </div>
 
           {/* Sensor Context */}
           <div className="mt-6">
-            <div className="text-gray-600 text-sm mb-3">Sensor Context</div>
+            <div className="text-muted-foreground text-sm mb-3">Sensor Context</div>
             <div className="grid grid-cols-2 gap-3">
-              <div className="bg-[#F9FBF9] rounded-lg p-3">
-                <div className="text-xs text-gray-500">TDS</div>
-                <div className="text-[#2D5A27]">{sensorData.tds} ppm</div>
+              <div className="bg-muted rounded-lg p-3">
+                <div className="text-xs text-muted-foreground">TDS</div>
+                <div className="text-primary">{sensorData.tds} ppm</div>
               </div>
-              <div className="bg-[#F9FBF9] rounded-lg p-3">
-                <div className="text-xs text-gray-500">Water</div>
-                <div className="text-[#2D5A27]">{sensorData.waterTemp}°C</div>
+              <div className="bg-muted rounded-lg p-3">
+                <div className="text-xs text-muted-foreground">Water</div>
+                <div className="text-primary">{sensorData.waterTemp}°C</div>
               </div>
-              <div className="bg-[#F9FBF9] rounded-lg p-3">
-                <div className="text-xs text-gray-500">Air</div>
-                <div className="text-[#2D5A27]">{sensorData.airTemp}°C</div>
+              <div className="bg-muted rounded-lg p-3">
+                <div className="text-xs text-muted-foreground">Air</div>
+                <div className="text-primary">{sensorData.airTemp}°C</div>
               </div>
-              <div className="bg-[#F9FBF9] rounded-lg p-3">
-                <div className="text-xs text-gray-500">Humidity</div>
-                <div className="text-[#2D5A27]">{sensorData.humidity}%</div>
+              <div className="bg-muted rounded-lg p-3">
+                <div className="text-xs text-muted-foreground">Humidity</div>
+                <div className="text-primary">{sensorData.humidity}%</div>
               </div>
             </div>
           </div>

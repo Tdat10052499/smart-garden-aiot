@@ -75,18 +75,18 @@ export function CareGuidePage() {
     <div className="max-w-6xl mx-auto p-8">
       {/* Header */}
       <div className="mb-6">
-        <h1 className="text-[#2D5A27] mb-2">Strawberry Care Guide</h1>
-        <p className="text-gray-600">Expert guidance tailored to your growing conditions</p>
+        <h1 className="text-primary mb-2">Strawberry Care Guide</h1>
+        <p className="text-secondary">Expert guidance tailored to your growing conditions</p>
       </div>
 
       {/* Tab Navigation */}
-      <div className="flex gap-2 mb-6 border-b border-gray-200">
+      <div className="flex gap-2 mb-6 border-b border-border">
         <button
           onClick={() => setActiveTab("guide")}
           className={`flex items-center gap-2 px-6 py-3 rounded-t-[12px] transition-all ${
             activeTab === "guide"
-              ? "bg-white text-[#2D5A27] border-b-2 border-[#2D5A27]"
-              : "bg-transparent text-gray-600 hover:text-[#2D5A27]"
+              ? "bg-surface text-primary border-b-2 border-primary"
+              : "bg-transparent text-secondary hover:text-primary"
           }`}
         >
           <BookOpen size={20} />
@@ -96,8 +96,8 @@ export function CareGuidePage() {
           onClick={() => setActiveTab("doctor")}
           className={`flex items-center gap-2 px-6 py-3 rounded-t-[12px] transition-all ${
             activeTab === "doctor"
-              ? "bg-white text-[#2D5A27] border-b-2 border-[#2D5A27]"
-              : "bg-transparent text-gray-600 hover:text-[#2D5A27]"
+              ? "bg-surface text-primary border-b-2 border-primary"
+              : "bg-transparent text-secondary hover:text-primary"
           }`}
         >
           <Bot size={20} />
@@ -122,7 +122,7 @@ export function CareGuidePage() {
 
           {/* Care Step Cards */}
           <div className="space-y-6">
-            <h2 className="text-[#2D5A27] flex items-center gap-2">
+            <h2 className="text-primary flex items-center gap-2">
               <Sprout size={24} />
               Complete Growing Guide
             </h2>
@@ -138,12 +138,12 @@ export function CareGuidePage() {
           </div>
 
           {/* Quick Tips */}
-          <div className="mt-8 p-6 bg-amber-50 border-l-4 border-amber-500 rounded-[12px]">
+          <div className="mt-8 p-6 bg-amber-500/10 border-l-4 border-amber-500/30 rounded-[12px]">
             <div className="flex gap-3">
-              <AlertCircle className="text-amber-600 flex-shrink-0" size={24} />
+              <AlertCircle className="text-amber-400 flex-shrink-0" size={24} />
               <div>
-                <h3 className="text-amber-900 mb-2">Quick Tips</h3>
-                <ul className="text-sm text-amber-800 space-y-1">
+                <h3 className="text-amber-400 mb-2">Quick Tips</h3>
+                <ul className="text-sm text-amber-300 space-y-1">
                   <li>• Always test water quality before mixing nutrients</li>
                   <li>• Change nutrient solution every 2 weeks</li>
                   <li>• Clean reservoir and lines monthly to prevent algae buildup</li>

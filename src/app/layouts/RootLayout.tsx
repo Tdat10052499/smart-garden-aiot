@@ -14,10 +14,10 @@ export function RootLayout() {
   ];
 
   return (
-    <div className="flex h-screen bg-background dark:bg-slate-950">
+    <div className="flex h-screen bg-background">
       {/* Vertical Sidebar */}
-      <aside className="w-20 bg-[var(--sidebar)] flex flex-col items-center py-8 gap-8 text-[var(--sidebar-foreground)]">
-        <div className="w-10 h-10 bg-[var(--sidebar-primary)] rounded-[12px] flex items-center justify-center text-[var(--sidebar-primary-foreground)]">
+      <aside className="w-20 bg-sidebar flex flex-col items-center py-8 gap-8 text-sidebar-foreground">
+        <div className="w-10 h-10 bg-sidebar-primary rounded-[12px] flex items-center justify-center text-sidebar-primary-foreground">
           <span>S</span>
         </div>
 
@@ -29,10 +29,10 @@ export function RootLayout() {
               <Link
                 key={item.id}
                 to={item.path}
-                className={`w-12 h-12 rounded-[12px] flex items-center justify-center transition-all dark:backdrop-blur-sm ${
+                className={`w-12 h-12 rounded-[12px] flex items-center justify-center transition-all ${
                   isActive
-                    ? "bg-[var(--sidebar-primary)] text-[var(--sidebar-primary-foreground)] dark:bg-emerald-600/30 dark:text-emerald-400"
-                    : "hover:bg-[var(--sidebar-accent)] hover:text-[var(--sidebar-accent-foreground)] dark:hover:bg-slate-800/50"
+                    ? "bg-sidebar-primary text-sidebar-primary-foreground"
+                    : "hover:bg-sidebar-accent hover:text-sidebar-accent-foreground"
                 }`}
                 title={item.label}
               >
@@ -43,7 +43,7 @@ export function RootLayout() {
           {/* Theme Toggle */}
           <button
             onClick={() => setTheme(theme === 'light' ? 'dark' : 'light')}
-            className="w-12 h-12 rounded-[12px] flex items-center justify-center transition-all hover:bg-[var(--sidebar-accent)] hover:text-[var(--sidebar-accent-foreground)]"
+            className="w-12 h-12 rounded-[12px] flex items-center justify-center transition-all hover:bg-sidebar-accent hover:text-sidebar-accent-foreground"
             title={`Switch to ${isDark ? 'light' : 'dark'} mode`}
           >
             {isDark ? <Sun size={24} /> : <Moon size={24} />}

@@ -38,26 +38,15 @@ const alerts: Alert[] = [
 
 export function SmartAlerts() {
   return (
-    <div className="bg-white rounded-[12px] p-6 shadow-sm border border-gray-100">
-      <h3 className="text-[#2D5A27] mb-4">Recent Issues</h3>
+    <div className="bg-card rounded-[12px] p-6 shadow-sm border border-border">
+      <h3 className="text-primary mb-4">Recent Issues</h3>
 
       <div className="space-y-3">
         {alerts.map((alert) => (
           <div
-            key={alert.id}
-            className={`flex gap-4 p-4 rounded-[12px] border-l-4 ${
-              alert.severity === "error"
-                ? "bg-red-50 border-red-500"
-                : "bg-yellow-50 border-yellow-500"
-            }`}
-          >
+            key={alert.id}\n            className={`flex gap-4 p-4 rounded-[12px] border-l-4 ${\n              alert.severity === "error"\n                ? "bg-destructive/10 border-destructive/30"\n                : "bg-amber-500/10 border-amber-500/30"\n            }`}\n          >
             <div
-              className={`w-10 h-10 rounded-full flex items-center justify-center flex-shrink-0 ${
-                alert.severity === "error"
-                  ? "bg-red-100 text-red-600"
-                  : "bg-yellow-100 text-yellow-600"
-              }`}
-            >
+              className={`w-10 h-10 rounded-full flex items-center justify-center flex-shrink-0 \${alert.severity === "error" ? "bg-destructive/20 text-destructive" : "bg-amber-500/20 text-amber-400"}`}\n            >
               {alert.icon === "disease" && <AlertCircle size={20} />}
               {alert.icon === "temperature" && <ThermometerSun size={20} />}
               {alert.icon === "water" && <Droplet size={20} />}
@@ -65,10 +54,10 @@ export function SmartAlerts() {
 
             <div className="flex-1 min-w-0">
               <div className="flex items-start justify-between gap-2 mb-1">
-                <h4 className="text-gray-900">{alert.title}</h4>
-                <span className="text-xs text-gray-500 whitespace-nowrap">{alert.time}</span>
+                <h4 className="text-primary">{alert.title}</h4>
+                <span className="text-xs text-secondary whitespace-nowrap">{alert.time}</span>
               </div>
-              <p className="text-sm text-gray-600">{alert.description}</p>
+<p className="text-sm text-secondary">{alert.description}</p>
             </div>
           </div>
         ))}
