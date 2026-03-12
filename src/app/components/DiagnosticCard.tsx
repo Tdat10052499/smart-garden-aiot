@@ -14,9 +14,9 @@ export function DiagnosticCard({ imageUrl, confidence, status, statusType, date,
   const isHealthy = statusType === "healthy";
 
   return (
-    <div className="bg-white rounded-[12px] overflow-hidden shadow-sm border border-gray-200 hover:shadow-md transition-all">
+    <div className="flex flex-col h-full bg-white rounded-[12px] overflow-hidden shadow-sm border border-gray-200 hover:shadow-md transition-all">
       {/* Image */}
-      <div className="relative aspect-square">
+      <div className="relative h-48 aspect-video overflow-hidden">
         <ImageWithFallback
           src={imageUrl}
           alt={`Scan - ${status}`}
@@ -35,7 +35,7 @@ export function DiagnosticCard({ imageUrl, confidence, status, statusType, date,
       </div>
 
       {/* Content */}
-      <div className="p-4">
+      <div className="flex-1 flex flex-col p-4 justify-between">
         {/* Confidence Score - Radial Gauge */}
         <div className="flex items-center justify-between mb-4">
           <div>
@@ -73,8 +73,9 @@ export function DiagnosticCard({ imageUrl, confidence, status, statusType, date,
             <p className="text-xs text-gray-500">{timestamp}</p>
           </div>
         </div>
-
-        {/* View Analysis Button */}
+      </div>
+      {/* Button Footer */}
+      <div className="mt-auto px-4 pb-4">
         <button className="w-full bg-[#2D5A27] hover:bg-[#234520] text-white py-2 px-4 rounded-[12px] transition-all flex items-center justify-center gap-2 text-sm">
           <Eye size={16} />
           View Analysis
