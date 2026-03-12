@@ -7,7 +7,7 @@
 ## ✅ Danh sách nhiệm vụ cần xử lý (Task Checklist)
 
 ### 1. Tín hiệu Tương tác (Interactive Visual Cues)
-- [ ] **Accordion & Thẻ mở rộng (Care Guide):** Thêm hiệu ứng hover đổi màu nền siêu nhẹ (`hover:bg-gray-50`) cho toàn bộ thanh tiêu đề của thẻ. Xoay icon chevron (`rotate-180`) mượt mà khi mở rộng/thu gọn.
+- [x] **Accordion & Thẻ mở rộng (Care Guide):** Thêm hiệu ứng hover đổi màu nền siêu nhẹ (`hover:bg-gray-50`) cho toàn bộ thanh tiêu đề của thẻ. Xoay icon chevron (`rotate-180`) mượt mà khi mở rộng/thu gọn.
 - [ ] **Quick Question Chips (Plant Doctor):** Biến các text tĩnh "TDS bao nhiêu là tốt?" thành các nút bấm rõ ràng. Thêm viền `border border-gray-200`, nền `bg-white`, hiệu ứng `hover:border-[#72BF44] hover:shadow-sm hover:-translate-y-0.5 transition-all cursor-pointer`.
 - [ ] **Hover trên Card:** Thêm hiệu ứng nổi nhẹ cho các card chẩn đoán (AI Lab): `hover:shadow-md hover:-translate-y-1 transition-all duration-300`.
 

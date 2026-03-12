@@ -13,10 +13,10 @@ export function NutrientStabilityChart() {
   ];
 
   return (
-    <div className="bg-white/80 backdrop-blur-md rounded-[12px] p-6 shadow-sm border border-white/20">
+    <div className="bg-white/80 backdrop-blur-md rounded-[12px] p-6 shadow-sm border border-white/20 dark:bg-slate-800/60 dark:backdrop-blur-md dark:border-slate-700/50 dark:shadow-slate-900/20">
       <div className="mb-6">
-        <h2 className="text-[#2D5A27] mb-2">Nutrient Stability - 24 Hour Trend</h2>
-        <p className="text-sm text-gray-600">TDS levels tracked over the last day</p>
+        <h2 className="text-[#2D5A27] dark:text-slate-50 mb-2">Nutrient Stability - 24 Hour Trend</h2>
+        <p className="text-sm text-gray-600 dark:text-slate-400">TDS levels tracked over the last day</p>
       </div>
 
       <div className="h-80">
@@ -61,8 +61,8 @@ export function NutrientStabilityChart() {
         </ResponsiveContainer>
       </div>
 
-      <div className="mt-4 p-4 bg-blue-50 rounded-[12px] border border-blue-200">
-        <p className="text-sm text-blue-900">
+      <div className="mt-4 p-4 bg-blue-50 dark:bg-slate-800 rounded-[12px] border border-blue-200 dark:border-slate-700">
+        <p className="text-sm text-blue-900 dark:text-slate-300">
           <strong>Stability Analysis:</strong> TDS levels are gradually increasing within optimal range.
           Current trend suggests stable nutrient uptake. Consider checking in 6-8 hours.
         </p>

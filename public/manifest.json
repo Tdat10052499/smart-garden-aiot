@@ -1,0 +1,7 @@
+{
+  "name": "Smart Garden AIoT",
+  "short_name": "SmartGarden",
+  "description": "AIoT Dashboard for Smart Hydroponic Garden",
+  "start_url": "/",
+  "display": "standalone",
+  "background
