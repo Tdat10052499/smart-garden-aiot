@@ -35,10 +35,19 @@ export function Sidebar() {
         )}
       </button>
 
-      <div className="p-5 pt-6 flex items-center justify-center md:justify-start">
-        <div className="w-10 h-10 bg-accent-primary text-accent-text rounded-3xl flex items-center justify-center shadow-sm">
-          <span className="font-bold text-sm">S</span>
-        </div>
+      <div className="flex items-center h-10 px-2 mb-6 mt-2 overflow-hidden">
+        <span className={cn(
+          'text-primary font-extrabold text-2xl text-center transition-all duration-300',
+          isExpanded ? 'w-0 opacity-0' : 'w-full'
+        )}>
+          S
+        </span>
+        <span className={cn(
+          'text-primary font-extrabold text-xl tracking-wide whitespace-nowrap transition-all duration-300',
+          isExpanded ? 'w-auto opacity-100' : 'w-0 opacity-0'
+        )}>
+          SMART GARDEN
+        </span>
       </div>
 
       <div className={cn(
