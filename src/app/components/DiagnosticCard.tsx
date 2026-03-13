@@ -23,10 +23,10 @@ export function DiagnosticCard({ imageUrl, confidence, status, statusType, date,
           className="w-full h-full object-cover"
         />
         <div className="absolute top-3 right-3">
-          <div className={`px-3 py-1 rounded-full text-xs flex items-center gap-1 ${
+          <div className={`font-medium text-xs px-2.5 py-1 rounded-full shadow-md flex items-center gap-1 ${
             isHealthy
-              ? "bg-accent/10 text-accent-foreground"
-              : "bg-destructive/10 text-destructive-foreground"
+              ? "bg-emerald-500 text-white"
+              : "bg-amber-500 text-white"
           }`}>
             {isHealthy ? <CheckCircle size={14} /> : <AlertTriangle size={14} />}
             {status}

@@ -1,17 +1,14 @@
-# Phase 4 Theming Overhaul - Nutrient Dosage Calculator
+# Smart Garden AIoT TODO
 
-**Status: Completed (No Changes Needed)**
+## AI Lab Page Layout Fix (Completed ✅)
 
-## Steps:
-- [x] Analyzed DosageCalculator.tsx using read_file
-- [x] Searched project for hardcoded colors using search_files  
-- [x] Reviewed theme.css and PHASE4_THEMING.md for CSS variables
-- [x] Confirmed component uses correct classes: bg-card, border-border, text-primary, text-muted-foreground (secondary), bg-background (inputs), bg-destructive/5
-- [x] Verified no hardcoded black/gray/green/dark: classes present
-- [x] Validated compliance across Nature Light, Midnight, Sunset themes via CSS vars
+### Steps:
+- [x] Previous Sidebar theme tasks
+- [x] Step 1: Create TODO.md
+- [x] Step 2: Remove flex-row double-sidebar
+- [x] Step 3: Add horizontal Top Toolbar (`flex flex-col md:flex-row ... bg-surface rounded-2xl`)
+- [x] Step 4: Style selects (`bg-background border-border text-primary rounded-lg focus:ring-accent-secondary`)
+- [x] Step 5: Full-width grid (`w-full grid-cols-...`)
+- [x] Step 6: Layout verified, no Sidebar overlap
 
-**Result:** Component already fully themed correctly. No edits required.
-
-## Next Steps:
-None required for this task.
-
+**Result:** Clean layout - toolbar above expanded masonry grid. Filters/stats horizontal, responsive, theme-aware.

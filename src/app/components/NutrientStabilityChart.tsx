@@ -1,6 +1,8 @@
 import { Area, AreaChart, CartesianGrid, ResponsiveContainer, Tooltip, XAxis, YAxis } from "recharts";
+import { useTheme } from "../contexts/ThemeContext";
 
 export function NutrientStabilityChart() {
+  const { theme } = useTheme();
   // Mock data - in production, this would come from Supabase
   const data = [
     { id: 1, time: "00:00", tds: 980, ph: 6.2, temp: 21.5 },
@@ -20,38 +22,38 @@ export function NutrientStabilityChart() {
       </div>
 
       <div className="h-80">
-        <ResponsiveContainer width="100%" height="100%">
+        <ResponsiveContainer key={theme} width="100%" height="100%">
           <AreaChart data={data}>
             <defs>
               <linearGradient id="colorTds" x1="0" y1="0" x2="0" y2="1">
-                <stop offset="5%" stopColor="hsl(var(--accent))" stopOpacity={0.3}/>
-                <stop offset="95%" stopColor="hsl(var(--accent))" stopOpacity={0}/>
+                <stop offset="5%" stopColor="var(--accent)" stopOpacity={0.3}/>
+                <stop offset="95%" stopColor="var(--accent)" stopOpacity={0}/>
               </linearGradient>
             </defs>
-            <CartesianGrid strokeDasharray="3 3" stroke="hsl(var(--border))" />
+            <CartesianGrid strokeDasharray="3 3" stroke="var(--border)" />
             <XAxis
               dataKey="time"
-              stroke="hsl(var(--text-secondary))"
+              stroke="var(--text-secondary)"
               style={{ fontSize: "12px" }}
             />
             <YAxis
-              stroke="hsl(var(--text-secondary))"
+              stroke="var(--text-secondary)"
               style={{ fontSize: "12px" }}
               label={{ value: "TDS (ppm)", angle: -90, position: "insideLeft" }}
             />
             <Tooltip
               contentStyle={{
-                backgroundColor: "hsl(var(--card))",
-                border: "1px solid hsl(var(--border))",
-                borderRadius: "12px",
-                padding: "12px"
+                backgroundColor: 'var(--surface)',
+                borderColor: 'var(--border)',
+                color: 'var(--text-primary)',
+                borderRadius: '0.5rem'
               }}
             />
             <Area
               key="area-tds"
               type="monotone"
               dataKey="tds"
-              stroke="hsl(var(--accent-secondary))"
+              stroke="var(--accent-secondary)"
               strokeWidth={2}
               fillOpacity={1}
               fill="url(#colorTds)"
