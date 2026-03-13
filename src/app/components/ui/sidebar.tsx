@@ -1,7 +1,7 @@
 "use client";
 
-import * as React from 'react';
-import { ChevronLeft, ChevronRight, ChevronDown, LayoutDashboard, FlaskConical, BookOpen, Settings } from 'lucide-react';
+import * as React from "react";
+import { ChevronLeft, ChevronRight, ChevronDown, LayoutDashboard, FlaskConical, BookOpen, Settings } from "lucide-react";
 import { cn } from './utils';
 import { Link, useLocation } from 'react-router';
 
@@ -20,13 +20,12 @@ export function Sidebar() {
 
   return (
     <div className={cn(
-      'flex flex-col h-[calc(100vh-2rem)] m-4 rounded-3xl bg-surface border-r border-border shadow-sm transition-[width] duration-300 ease-in-out flex-shrink-0',
+      'relative flex flex-col h-[calc(100vh-2rem)] m-4 rounded-3xl bg-surface border-r border-border shadow-sm transition-[width] duration-300 ease-in-out flex-shrink-0',
       isExpanded ? 'w-64' : 'w-[88px]'
     )}>
-      {/* Toggle Button (now relative since parent is flex item) */}
       <button 
         onClick={() => setIsExpanded(!isExpanded)}
-        className="absolute -right-3 top-10 z-50 w-6 h-6 rounded-full bg-surface border border-border text-secondary hover:text-primary shadow-sm flex items-center justify-center cursor-pointer hover:bg-accent-secondary/20 transition-colors"
+        className={`absolute -right-3 top-10 z-50 w-6 h-6 rounded-full border border-border bg-surface flex items-center justify-center cursor-pointer shadow-sm hover:text-primary transition-colors text-secondary`}
         title="Toggle Sidebar"
       >
         {isExpanded ? (
@@ -36,14 +35,12 @@ export function Sidebar() {
         )}
       </button>
 
-      {/* Logo */}
       <div className="p-5 pt-6 flex items-center justify-center md:justify-start">
         <div className="w-10 h-10 bg-accent-primary text-accent-text rounded-3xl flex items-center justify-center shadow-sm">
           <span className="font-bold text-sm">S</span>
         </div>
       </div>
 
-      {/* MAIN Label */}
       <div className={cn(
         'text-[10px] font-bold tracking-wider text-secondary uppercase px-5 mb-2 mt-4 opacity-0 w-0 transition-all duration-300 ease-in-out',
         isExpanded && 'opacity-100 w-auto'
@@ -51,7 +48,6 @@ export function Sidebar() {
         MAIN
       </div>
 
-      {/* Nav Links */}
       <div className="flex-1 mt-6 flex flex-col gap-2 px-3 overflow-y-auto overflow-x-hidden pb-4">
         {navigationItems.map((item) => {
           const Icon = item.icon;
@@ -61,6 +57,7 @@ export function Sidebar() {
               to={item.path}
               className={cn(
                 'flex items-center p-3 rounded-xl text-secondary hover:bg-black/5 dark:hover:bg-white/5 hover:text-primary transition-colors',
+                !isExpanded && 'p-2 px-0 w-10 h-10 mx-auto justify-center rounded-full border-0',
                 isActive(item.path) && 'bg-accent-secondary/15 text-accent-primary font-semibold rounded-xl'
               )}
             >
@@ -76,7 +73,6 @@ export function Sidebar() {
         })}
       </div>
 
-      {/* User Profile */}
       <div className="mt-auto p-3">
         <div className={cn(
           'flex items-center p-2 gap-3 rounded-2xl border border-border/50 bg-transparent hover:bg-black/5 dark:hover:bg-white/5 cursor-pointer transition-colors mx-1',
@@ -101,4 +97,3 @@ export function Sidebar() {
     </div>
   );
 }
-
